@@ -1,3 +1,3 @@
-public class Medicine {
+public class Medicine implements Product{
 
 }
