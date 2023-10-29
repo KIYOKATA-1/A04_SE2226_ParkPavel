@@ -7,6 +7,6 @@ public class Firm implements Observer{
 
     @Override
     public void update(Product product) {
-        System.out.println(name + "Уведомление" + product.getName() + "доступно за $" + product.getPrice());
+        System.out.println(name + " Уведомление " + product.getName() + " доступно за $ " + product.getPrice());
     }
 }

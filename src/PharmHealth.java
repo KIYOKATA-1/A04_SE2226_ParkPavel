@@ -17,7 +17,7 @@ public class PharmHealth {
     }
 
     public void addProduct(String name, double price){
-        Product product = Pharm.createProduct(name,price);
+        Product product = pharm.createProduct(name,price);
         notifyObservers(product);
     }
 
