@@ -1,5 +1,7 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         PharmHealth store = new PharmHealth();
 
         Pharm localPharmacy = new LocalPharm();
@@ -8,12 +10,31 @@ public class Main {
         Observer firm1 = new Firm("AMIR-D");
         Observer firm2 = new Firm("Bayer");
 
-        store.setPharm(localPharmacy);
+        store.setPharmacy(localPharmacy);
         store.addObserver(firm1);
-        store.addProduct("Aspirin", 5.99);
 
-        store.setPharm(onlinePharmacy);
-        store.addObserver(firm2);
-        store.addProduct("Vitamin C", 3.49);
+        Product product1 = new Medicine("Aspirin", 5.99);
+        Product product2 = new Vitaminchik("Vitamin C", 3.49);
+
+        store.addProductToMenu(product1);
+        store.addProductToMenu(product2);
+
+        boolean shopping = true;
+
+        while (shopping) {
+            store.displayMenu();
+            System.out.println("Введите цифру препората который хотели бы заказать (0 - в случае завершения");
+            int choice = scanner.nextInt();
+
+            if (choice == 0) {
+                shopping = false;
+            } else {
+                store.addToOrder(choice);
+            }
+        }
+
+        System.out.println("Детали Заказа:");
+        store.displayOrder();
+        System.out.println("Thank you for your order!");
     }
-}
+    }
