@@ -1,11 +1,12 @@
-public class Medicine implements Product{
+public class Vitaminchik implements Product {
     private String name;
     private double price;
 
-    public Medicine(String name, double price){
+    public Vitaminchik(String name, double price) {
         this.name = name;
         this.price = price;
     }
+
 
     @Override
     public String getName() {
@@ -17,4 +18,3 @@ public class Medicine implements Product{
         return price;
     }
 }
-
